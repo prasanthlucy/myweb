@@ -94,7 +94,7 @@
                             <h1>YOU</h1>
                             <h1>DEAR</h1>
                             <h2 id="addname"></h2>
-                            <h1>I Miss U</h1>
+                            <h1>I Miss U U</h1>
                         </center>
                     </div>
                 </body>
