@@ -37,7 +37,7 @@
 		
 		<repository>
 		    <id>nexusRepo</id>
-		    <url>http://13.201.5.164:8081/repository/kowshik/</url>
+		    <url>http://3.111.37.234:8081/repository/kowshik/</url>
 		</repository>
   	</distributionManagement>
 	
