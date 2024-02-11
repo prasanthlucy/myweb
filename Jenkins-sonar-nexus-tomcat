@@ -25,7 +25,7 @@ pipeline{
                        [
                             artifactId: 'myweb', 
                             classifier: '', 
-                            file: "target/myweb-8.2.0.war", 
+                            file: "target/myweb-8.2.1.war", 
                             type: 'war'
                        ]
                   ], 
@@ -35,14 +35,14 @@ pipeline{
                   nexusVersion: 'nexus3', 
                   protocol: 'http', 
                   repository: 'sample', 
-                  version: '8.2.0'  
+                  version: '8.2.1'  
               }
             }
         stage("deploy-dev"){
             steps{
                 sshagent(['tomcat-new']) {
                 sh """
-                    scp -o StrictHostKeyChecking=no target/myweb-8.2.0.war  ec2-user@172.31.4.182:/home/ec2-user/apache-tomcat-9.0.83/webapps/
+                    scp -o StrictHostKeyChecking=no target/myweb-8.2.1.war  ec2-user@172.31.4.182:/home/ec2-user/apache-tomcat-9.0.83/webapps/
                     
                     ssh ec2-user@172.31.4.182 /home/ec2-user/apache-tomcat-9.0.83/bin/shutdown.sh
                     
