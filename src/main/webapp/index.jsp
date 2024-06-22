@@ -72,7 +72,7 @@
                 </head>
 
                 <body>
-                    <a>Latha</a>
+                    <a>Kowshikeswar</a>
                     <div class="main" id="m1">
                         <center>
 
@@ -94,7 +94,7 @@
                             <h1>YOU</h1>
                             <h1>DEAR</h1>
                             <h2 id="addname"></h2>
-                            <h1>I am Miss U</h1>
+                            <h1>I Miss You</h1>
                         </center>
                     </div>
                 </body>
