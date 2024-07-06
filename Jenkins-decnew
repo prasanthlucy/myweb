@@ -18,13 +18,13 @@ pipeline{
         }
         stage("deploy-dev"){
             steps{
-                sshagent(['kowshik']) {
+                sshagent(['prod']) {
                 sh """
-                    scp -o StrictHostKeyChecking=no target/myweb.war  ec2-user@172.31.4.14:/home/ec2-user/apache-tomcat-9.0.84/webapps/
+                    scp -o StrictHostKeyChecking=no target/myweb.war  ec2-user@172.31.39.207:/home/ec2-user/apache-tomcat-9.0.90/webapps/
                     
-                    ssh ec2-user@172.31.4.14 /home/ec2-user/apache-tomcat-9.0.84/bin/shutdown.sh
+                    ssh ec2-user@172.31.39.207 /home/ec2-user/apache-tomcat-9.0.90/bin/shutdown.sh
                     
-                    ssh ec2-user@172.31.4.14 /home/ec2-user/apache-tomcat-9.0.84/bin/startup.sh
+                    ssh ec2-user@172.31.39.207 /home/ec2-user/apache-tomcat-9.0.90/bin/startup.sh
             
                 """
             }
