@@ -32,12 +32,12 @@
 	<distributionManagement>
 		 <snapshotRepository>
 		    <id>nexusRepo</id>
-		    <url>http://3.6.90.232:8081/repository/prasanth-nexus-snapshot/></url>
+		    <url>http://52.66.7.207:8081/repository/maven-snapshot/></url>
 		 </snapshotRepository>
 		
 		<repository>
 		    <id>nexusRepo</id>
-		    <url>http://3.6.90.232:8081/repository/prasanth-nexus/</url>
+		    <url>http://52.66.7.207:8081/repository/real/</url>
 		</repository>
   	</distributionManagement>
 	
