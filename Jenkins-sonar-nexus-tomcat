@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                git credentialsId: 'javahome2', url: 'https://github.com/prasanthlucy/myweb.git'
+                git credentialsId: 'dev', url: 'https://github.com/prasanthlucy/myweb.git'
             }
         }
         stage("Maven Build"){
@@ -31,22 +31,22 @@ pipeline{
                   ], 
                   credentialsId: 'nexus3', 
                   groupId: 'in.javahome', 
-                  nexusUrl: '172.31.1.197:8081', 
+                  nexusUrl: '172.31.36.245:8081', 
                   nexusVersion: 'nexus3', 
                   protocol: 'http', 
-                  repository: 'sample', 
+                  repository: 'prasanth-release', 
                   version: '8.2.2'  
               }
             }
         stage("deploy-dev"){
             steps{
-                sshagent(['tomcat-new1']) {
+                sshagent(['prod']) {
                 sh """
-                    scp -o StrictHostKeyChecking=no target/myweb-8.2.2.war  ec2-user@172.31.3.210:/home/ec2-user/apache-tomcat-9.0.85/webapps/
+                    scp -o StrictHostKeyChecking=no target/myweb-8.2.2.war  ec2-user@172.31.43.178:/home/ec2-user/apache-tomcat-9.0.91/webapps/
                     
-                    ssh ec2-user@172.31.3.210 /home/ec2-user/apache-tomcat-9.0.85/bin/shutdown.sh
+                    ssh ec2-user@172.31.43.178 /home/ec2-user/apache-tomcat-9.0.91/bin/shutdown.sh
                     
-                    ssh ec2-user@172.31.3.210 /home/ec2-user/apache-tomcat-9.0.85/bin/startup.sh
+                    ssh ec2-user@172.31.43.178 /home/ec2-user/apache-tomcat-9.0.91/bin/startup.sh
                 
                 """
             }
