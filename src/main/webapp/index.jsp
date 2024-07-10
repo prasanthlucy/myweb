@@ -72,11 +72,11 @@
                 </head>
 
                 <body>
-                    <a>kowshik</a>
+                    <a>prasanth</a>
                     <div class="main" id="m1">
                         <center>
 
-                            <h1>ENTER YOUR NAME</h1>
+                            <h1>"ENTER YOUR NAME"</h1>
                             <br>
                             <br>
                             <input type="text" placeholder="ENTER NAME" id="name">
