@@ -29,12 +29,12 @@ pipeline{
                             type: 'war'
                        ]
                   ], 
-                  credentialsId: 'dev', 
+                  credentialsId: 'tom', 
                   groupId: 'in.javahome', 
-                  nexusUrl: '172.31.34.204:8081', 
+                  nexusUrl: '172.31.41.38:8081', 
                   nexusVersion: 'nexus3', 
                   protocol: 'http', 
-                  repository: 'prasanth-release', 
+                  repository: 'prasanth1-release', 
                   version: '8.2.2'  
               }
             }
